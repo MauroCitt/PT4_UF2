@@ -15,6 +15,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -65,9 +66,16 @@ public class MainActivity extends AppCompatActivity {
         subscribeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String aaa = null;
                 // Log.d(TAG, "Subscripció a General");
                 // [START subscribe_topics]
-                FirebaseMessaging.getInstance().subscribeToTopic(getString(R.string.default_notification_channel_name))
+                int item = onItemSelected(spinner, null, 0, 0);
+
+                if (item == 0){
+                     aaa = "admin";
+                }
+
+                FirebaseMessaging.getInstance().subscribeToTopic(aaa)
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
@@ -141,4 +149,15 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public int onItemSelected(AdapterView<?> parent, View view,
+                               int pos, long id) {
+        int itemPosition = parent.getSelectedItemPosition();
+        return itemPosition;
+    }
+
+    public void onNothingSelected(AdapterView<?> parent) {
+        // Another interface callback.
+    }
 }
+
+
