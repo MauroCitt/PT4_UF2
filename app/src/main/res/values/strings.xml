@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">UF2_PT4_M08</string>
+    <string-array name="spinner_array">
+        <item>Administración y gestión</item>
+        <item>Comercio y Marketing</item>
+        <item>Informática y Comunicaciones</item>
+        <item>Servicios a la comunidad</item>
+    </string-array>
+    <string name="default_notification_channel_id">1</string>
+    <string name="default_notification_channel_name">General</string>
+    <string name="msg_subscrit">Subscripció Correcta</string>
+    <string name="msg_subscrit_error">Error al subscriures</string>
+    <string name="msg_token_fmt">InstanceID Token: %s</string>
+    <string name="fcm_message">FCM Message</string>
+
+</resources>
